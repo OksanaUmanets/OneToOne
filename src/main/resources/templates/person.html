@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+</head>
+<body>
+<h3>Пользователи: </h3>
+<a href="/person/new">Добавить пользователя</a>
+<div th:each="person : ${persons}">
+    <h3 th:text="'Пользователь №' + ${person.getId()}"></h3>
+    <p th:text="'Фамилия: ' + ${person.getLastName()}"></p>
+    <p th:text="'Имя : ' + ${person.getFirstName()}"></p>
+    <p th:text="'Отчество : ' + ${person.getPatronymic()}"></p>
+    <p th:text="'Cерия паспорта : ' + ${(person.getPassport()).getSeries()}"></p>
+    <p th:text="'Номер паспорта : ' + ${(person.getPassport()).getNumber()}"></p>
+</div>
+</body>
+</html>
